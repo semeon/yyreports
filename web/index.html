@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="yyogaReports">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>YYoga API Usage Reports</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+  <script src="js/controllers.js" charset="utf-8"></script>
+
+
+</head>
+<body ng-controller="MainCtrl">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+        <h1>YYoga API Usage Reports</h1>
+        <hr/>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Report header -->
+    <div class="row">
+      <h4 class="u-pull-left" style="margin-right: 20px;">Month:</h4>
+
+      <select class="u-pull-left" style="margin-right: 20px;"
+              ng-model="selectedReport" 
+              ng-options="report.title for report in reports"></select>
+
+      <a  class="button button-primary u-pull-left" style="margin-right: 20px;" 
+          href="#" ng-click="generate('api-2014-12')">Load Report</a>
+    </div>
+
+    <!-- Separator -->
+    <div class="row">
+      <hr style="margin-top: 0px;"/>
+    </div>
+
+  </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+</body>
+</html>
