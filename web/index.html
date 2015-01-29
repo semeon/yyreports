@@ -21,17 +21,19 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.min.css">
+
+
+
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
-  <script src="js/controllers.js" charset="utf-8"></script>
 
 
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" >
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -42,7 +44,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" ng-cloak>
 
     <!-- Report header -->
     <div class="row">
@@ -61,11 +63,30 @@
       <hr style="margin-top: 0px;"/>
     </div>
 
+    <div class="row">
+      <p>{{rawData.values[0]}}</p>
+    </div>
+
+    <div class="row">
+      <p>{{chartJsData}}</p>
+    </div>
+
+    <div class="row">
+      <canvas id="chart" width="400" height="400"></canvas>
+    </div>
+
   </div>
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js" charset="utf-8"></script>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+  <script src="js/controllers.js" charset="utf-8"></script>
+  <!-- <script src="js/chartCode.js" charset="utf-8"></script> -->
+  <!-- <script src="js/d3code.js" charset="utf-8"></script> -->
 
 </body>
 </html>
